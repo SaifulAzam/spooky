@@ -156,7 +156,7 @@ class Widget extends React.Component {
   render() {
     let howler = null;
     if (this.props.playback.currentTrack !== null) {
-      howler = <ReactHowler
+      howler = (<ReactHowler
         autoPlay={false}
         src={this.props.playback.playQueue[this.props.playback.currentTrack].url}
         onLoad={this.handleOnLoad}
@@ -166,7 +166,7 @@ class Widget extends React.Component {
         mute={this.state.mute}
         preload={false}
         html5={true}
-        ref={(ref) => (this.player = ref)}/>
+        ref={ref => (this.player = ref)}/>)
       ;
     }
 
@@ -204,7 +204,7 @@ class Widget extends React.Component {
       to: { color: 'rgb(215, 30, 58, .2)' },
       step: (state, bar) => {
         bar.path.setAttribute('stroke', state.color);
-      }
+      },
     };
 
     return (
